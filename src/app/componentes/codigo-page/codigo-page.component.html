@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="parallax-container logueo">
+   <div class="row"><br>
+     <div class="col m8 s8 offset-m2 offset-s2 center">
+       <h4 class="truncate bg-card-user">
+       <div class="row login">
+         <h4>Ingresar codigo</h4>
+         <form [formGroup]="codigoForm" (submit)="onSubmit()" class="col s12">
+          <div class="row">
+            <div class="input-field col m12 s12">
+              <i class="material-icons iconis prefix">security</i>
+              <label for="codigo">Codigo</label>
+              <input id="codigo" type="number" formControlName="codigo" name="codigo" class="form-control validate" [ngClass]="{ 'is-invalid': submitted && f.codigo.errors }" [(ngModel)]="codigo" />
+              <div *ngIf="submitted && f.codigo.errors" class="invalid-feedback">
+                <span class="helper-text red-text" data-error="wrong" data-success="right" *ngIf="f.codigo.errors.required">Ingrese código</span>
+              </div>
+            </div>
+          </div>
+           <div class="row">
+             <input class="btn waves-effect waves-light" type="submit" value="Continuar">
+           </div>                
+         </form>
+       </div>
+        </h4>
+      </div>
+   </div>
+ </div>
+</div>
