@@ -1,42 +1,54 @@
-<div class="container">
-    <div class="parallax-container logueo">
-     <div class="row"><br>
-       <div class="col m8 s8 offset-m2 offset-s2 center">
-         <h4 class="truncate bg-card-user">
-         <div class="row login">
-           <h4>Inicia sesión.</h4>
-           <form [formGroup]="loginForm" (submit)="onSubmitLogin()" class="col s12">
-            <div class="row">
-              <div class="input-field col m12 s12">
-                <i class="material-icons iconis prefix">account_box</i>
-                <label for="email">Email</label>
-                <input id="email" type="email" formControlName="email" name="email" class="form-control validate" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" [(ngModel)]="email" />
-                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                  <span class="helper-text red-text" data-error="wrong" data-success="right" *ngIf="f.email.errors.required">Ingrese email</span>
-                  <span class="helper-text red-text" data-error="wrong" data-success="right" *ngIf="f.email.errors.email">Email invalido</span>
+<div class="page-header header" >
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+        <div class="card card-login">
+            <form [formGroup]="loginForm" (submit)="onSubmitLogin()">
+              <div class="card-header card-header-info text-center">
+                <h4 class="card-title">Login</h4>
+                <div class="social-line">
+                  <a class="btn btn-just-icon btn-link" (click)="onClickGoogleLogin()">
+                    <i class="fa fa-google-plus"></i>
+                  </a>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="input-field col m12 s12">
-                <i class="material-icons iconis prefix">enhanced_encryption</i>
-                <label for="password">Contraseña</label>
-                <input id="password" type="password" formControlName="password" name="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" [(ngModel)]="password" />
-                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                  <span class="helper-text red-text" data-error="wrong" data-success="right" *ngIf="f.password.errors.required">Ingrese contraseña</span>
-                </div>
+              <p class="description text-center">O ingrese credenciales</p>
+              <div class="card-body">
+
+                <span class="bmd-form-group"><div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="material-icons">mail</i>
+                    </span>
+                  </div>
+
+                  <input type="email" formControlName="email" name="email" class="form-control validate"  placeholder="Email..." [ngClass]="{ 'is-invalid': submitted && f.email.errors }" [(ngModel)]="email" />
+                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback text-center">
+                    <span class="helper-text red-text" data-error="wrong" data-success="right" *ngIf="f.email.errors.required">Ingrese email</span>
+                    <span class="helper-text red-text" data-error="wrong" data-success="right" *ngIf="f.email.errors.email">Email invalido</span>
+                  </div>
+                </div></span>
+
+                <span class="bmd-form-group"><div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="material-icons">lock_outline</i>
+                    </span>
+                  </div>
+
+                  <input type="password" formControlName="password" name="password" class="form-control validate"  placeholder="Contraseña..." [ngClass]="{ 'is-invalid': submitted && f.password.errors }" [(ngModel)]="password" />
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback text-center">
+                    <span class="helper-text red-text" data-error="wrong" data-success="right" *ngIf="f.password.errors.required">Ingrese contraseña</span>
+                  </div>
+                </div></span>
+
               </div>
-            </div>
-             <div class="row">
-               <input class="btn waves-effect waves-light" type="submit" value="Iniciar sesión">
-             </div>
-             <div class="row">
-                <input class="btn waves-effect waves-light" type="button"  (click)="onClickGoogleLogin()" value="GOOGLE" >
-              </div>                 
-           </form>
-         </div>
-          </h4>
-        </div>
-     </div>
-   </div>
+              <div class="footer text-center pad">
+                <input class="btn btn-info btn-wd btn-lg" type="submit" value="Iniciar sesión">
+              </div>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
 </div>

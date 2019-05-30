@@ -1,28 +1,32 @@
 <div class="container">
-  <div class="parallax-container logueo">
-   <div class="row"><br>
-     <div class="col m8 s8 offset-m2 offset-s2 center">
-       <h4 class="truncate bg-card-user">
-       <div class="row login">
-         <h4>Ingresar codigo</h4>
-         <form [formGroup]="codigoForm" (submit)="onSubmit()" class="col s12">
-          <div class="row">
-            <div class="input-field col m12 s12">
-              <i class="material-icons iconis prefix">security</i>
-              <label for="codigo">Codigo</label>
-              <input id="codigo" type="number" formControlName="codigo" name="codigo" class="form-control validate" [ngClass]="{ 'is-invalid': submitted && f.codigo.errors }" [(ngModel)]="codigo" />
-              <div *ngIf="submitted && f.codigo.errors" class="invalid-feedback">
-                <span class="helper-text red-text" data-error="wrong" data-success="right" *ngIf="f.codigo.errors.required">Ingrese código</span>
+    <div class="row">
+        <div class="col-md-6 ml-auto mr-auto">
+          <h2 class="text-center title">Ingresa tu codigo</h2>
+          <h4 class="text-center description">Se le envio un código a su correo para más seguridad.</h4>
+          <form class="contact-form" [formGroup]="codigoForm" (submit)="onSubmit()">
+            <div class="row">
+              <div class="form-group bmd-form-group ml-auto mr-auto">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fa fa-security"></i>
+                    </span>
+                  </div>
+                  <input  type="number" formControlName="codigo" name="codigo" class="form-control validate" placeholder="Codigo..." [ngClass]="{ 'is-invalid': submitted && f.codigo.errors }" [(ngModel)]="codigo">
+                  <div *ngIf="submitted && f.codigo.errors" class="invalid-feedback text-center">
+                    <span class="helper-text red-text" data-error="wrong" data-success="right" *ngIf="f.codigo.errors.required">Ingrese código</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-           <div class="row">
-             <input class="btn waves-effect waves-light" type="submit" value="Continuar">
-           </div>                
-         </form>
-       </div>
-        </h4>
+            <div class="row">
+              <div class="col-md-4 ml-auto mr-auto text-center">
+                <button class="btn btn-primary btn-raised" type="submit">
+                  Verificar
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-   </div>
- </div>
 </div>

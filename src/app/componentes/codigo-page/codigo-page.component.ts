@@ -36,11 +36,16 @@ export class CodigoPageComponent implements OnInit {
       return;
     }
 
-    if(this.codigo == "1234"){
+    var codigo = localStorage.getItem("codigo");
+
+    if(this.codigo == codigo){
+      var email = localStorage.getItem("correo");
+      document.cookie = "Sesion-cookie=" +  btoa(email);
       this.router.navigate(['/privado']);
     } else {
       alert("Codigo incorrecto");
     }
 
   }
+
 }

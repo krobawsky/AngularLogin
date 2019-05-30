@@ -1,24 +1,32 @@
-<nav class="grey darken-4">
-    <div class="nav-wrapper">
-        <a class="brand-logo center"><img src="https://cdn3.iconfinder.com/data/icons/happily-colored-snlogo/128/medium.png"></a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="left hide-on-med-and-down">
-        <li *ngIf="!isLogin"><a href="/">Inicio</a></li>
-        <li *ngIf="!isLogin"><a href="/login">Login</a></li>
-        <li *ngIf="!isLogin"><a href="/registrar">Regitrate</a></li>
-        <li *ngIf="isLogin"><a href="/login" (click)="onClickLogout()">Salir</a></li>
-      </ul>
-      <ul class="sidenav" id="mobile-demo">
-          <li *ngIf="!isLogin"><a href="/">Inicio</a></li>
-          <li *ngIf="!isLogin"><a href="/login">Login</a></li>
-          <li *ngIf="!isLogin"><a href="/registrar">Regitrate</a></li>
-          <li *ngIf="isLogin"><a href="/login" (click)="onClickLogout()" >Salir</a></li>
+  <nav class="navbar navbar-expand-lg bg-white">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="/">AngularLogin</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li *ngIf="!isLogin" class="nav-item">
+            <a href="/login" class="nav-link">
+              Login
+            </a>
+          </li>
+          <li *ngIf="!isLogin" class="nav-item">
+            <a href="/registrar" class="nav-link">
+              Regitrate
+            </a>
+          </li>
+          <li *ngIf="isLogin" class="nav-item">
+            <a href="/login" class="nav-link" (click)="onClickLogout()">
+              Salir
+            </a>
+          </li>
         </ul>
+      </div>
     </div>
   </nav>
-
- 
-
-
-  
-          

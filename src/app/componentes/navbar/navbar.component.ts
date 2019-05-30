@@ -30,24 +30,12 @@ export class NavbarComponent implements OnInit {
    }
 
   onClickLogout(){
-   this.authService.logout();
-
+    document.cookie = "Sesion-cookie=";
+    this.authService.logout();
  }
 
   jquery_code()
   {
-    $(document).ready(function(){
-      $('.tabs').tabs();
-    });
-        
-    $(document).ready(function(){
-      $('.sidenav').sidenav();
-    });
     
-    $('.fixed-action-btn').floatingActionButton({   
-      toolbarEnabled: true,
-      direction: 'left',
-
-     });  
   }
 }
